@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_app/screens/category/expones_categoeryList.dart';
 import 'package:money_app/screens/category/income_cateagorylist.dart';
+import 'package:money_app/db/category/category_db.dart';
 
 class ScreenCategory extends StatefulWidget {
   const ScreenCategory({Key? key}) : super(key: key);
@@ -12,11 +13,12 @@ class ScreenCategory extends StatefulWidget {
 class _ScreenCategoryState extends State<ScreenCategory>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
+ 
   @override
   void initState() {
     // TODO: implement initState
     _tabController = TabController(length: 2, vsync: this);
+    CategoryDB().refresUI();
     super.initState();
   }
 
