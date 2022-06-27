@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_app/db/category/category_db.dart';
 import 'package:money_app/model/category/category_model.dart';
+import 'package:money_app/screens/add_transition/screen_add_trasition.dart';
 import 'package:money_app/screens/category/category_add_popup.dart';
 import 'package:money_app/screens/category/screen_cateagory.dart';
 import 'package:money_app/screens/home/widget/bottom_navigation.dart';
@@ -33,6 +34,7 @@ class ScreenHome extends StatelessWidget {
         onPressed: () {
           if (selectedIndexNotifier.value == 0) {
             print('transtion');
+            Navigator.of(context).pushNamed(ScreenAddTranstion.routeName);
           } else {
             print('category');
             showCategoryAddPopup(context);
